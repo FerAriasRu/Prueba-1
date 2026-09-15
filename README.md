@@ -15,9 +15,9 @@
    Para generar los CDS se usa el comando
    ### gffread ../GCA_033216535.1.fa -o CDS.gff -g ../GCA_033216535.1.fa -x CDS.fasta
    primero debe llamarse el archivo fasta que contiene el genoma
-   -o es el archivo de salida en formato gff (Anotado) \
-   -g nuevamente es el genoma 
-   -x archivo de salida en formato fasta
+   -o es el archivo de salida en formato gff (Anotado)\
+   -g nuevamente es el genoma\ 
+   -x archivo de salida en formato fasta\
 
 ## 3. Secuencias de proteinas
   Se utiliza el mismo promgara gffread
@@ -32,7 +32,7 @@
   generar el archivo txt de la anotacion 
   ### cut -f1 GCA_033216535.1_TgRH_pasteur.augustus.gtf | grep -v '^#' | sort -u > gtf_ids.txt
   comparar diferencia entre archivos 
-  ## diff diff fasta_ids.txt gtf_ids.txt 
+  ### diff diff fasta_ids.txt gtf_ids.txt 
 
 ## 5. Información general del genoma
 
