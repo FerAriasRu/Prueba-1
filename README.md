@@ -14,15 +14,10 @@
    ### conda install -c bioconda gffread
    Para generar los CDS se usa el comando
    ### gffread ../GCA_033216535.1.fa -o CDS.gff -g ../GCA_033216535.1.fa -x CDS.fasta
-   primero debe llamarse el archivo fasta que contiene el genoma
-   -o es el archivo de salida en formato gff (Anotado)
-   -g nuevamente es el genoma 
-   -x archivo de salida en formato fasta
-
-
+   primero debe llamarse el archivo fasta que contiene el genoma<br>
    -o es el archivo de salida en formato gff (Anotado)<br>
--g nuevamente es el genoma<br>
-
+   -g nuevamente es el genoma<br> 
+   -x archivo de salida en formato fasta<br>
 
 ## 3. Secuencias de proteinas
   Se utiliza el mismo promgara gffread
