@@ -2,11 +2,11 @@
 
 ## 1. Acceder a genomas desde SRA/UCSC
    Descargar genoma desde NCBI
-   # datasets download genome accession GCA_033216535.1
+   ### datasets download genome accession GCA_033216535.1
    Descargar genoma desde USCS, contiene anotaciones realizadas por ANGUS Y XENOREFGENE
-   # wget --timestamping -m -nH -x --cut-dirs=6 -e robots=off -np -k     --reject "index.html*" -P "GCA_033216535.1"        https://hgdownload.soe.ucsc.edu/hubs/GCA/033/216/535/GCA_033216535.1/
+   ### wget --timestamping -m -nH -x --cut-dirs=6 -e robots=off -np -k     --reject "index.html*" -P "GCA_033216535.1"        https://hgdownload.soe.ucsc.edu/hubs/GCA/033/216/535/GCA_033216535.1/
    En este caso se uso el genoma de USCS, con el fin de determinar si es diferente al de NCBI, se compraron los genomas con MuMmer con el siguiente comando:
-   # nucmer --prefix=comparacion GCA_033216535.1/GCA_033216535.1.fa ncbi/ncbi_dataset/data/GCA_033216535.1/GCA_033216535.1_TgRH_pasteur_genomic.fna
+   ### nucmer --prefix=comparacion GCA_033216535.1/GCA_033216535.1.fa ncbi/ncbi_dataset/data/GCA_033216535.1/GCA_033216535.1_TgRH_pasteur_genomic.fna
    El archivo de salida en este caso es comparacion.delta
    
 # 2. Secuencias CDS
