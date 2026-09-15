@@ -18,11 +18,10 @@
    -o es el archivo de salida en formato gff (Anotado)
    -g nuevamente es el genoma 
    -x archivo de salida en formato fasta
-   
-**Primero** debe llamarse el archivo fasta que contiene el genoma.
-**-o** es el archivo de salida en formato gff (Anotado).
-**-g** nuevamente es el genoma.
-**-x** archivo de salida en formato fasta.
+
+
+   -o es el archivo de salida en formato gff (Anotado)<br>
+-g nuevamente es el genoma<br>
 
 
 ## 3. Secuencias de proteinas
