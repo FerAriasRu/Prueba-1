@@ -1,6 +1,6 @@
 # Prueba-1
 
-# 1. Acceder a genomas desde SRA/UCSC
+## 1. Acceder a genomas desde SRA/UCSC
    Descargar genoma desde NCBI
    # datasets download genome accession GCA_033216535.1
    Descargar genoma desde USCS, contiene anotaciones realizadas por ANGUS Y XENOREFGENE
