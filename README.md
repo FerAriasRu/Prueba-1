@@ -15,10 +15,13 @@
    Para generar los CDS se usa el comando
    ### gffread ../GCA_033216535.1.fa -o CDS.gff -g ../GCA_033216535.1.fa -x CDS.fasta
    primero debe llamarse el archivo fasta que contiene el genoma
-   -o es el archivo de salida en formato gff (Anotado)\
-   -g nuevamente es el genoma\ 
-   -x archivo de salida en formato fasta\
-
+   -o es el archivo de salida en formato gff (Anotado)
+   -g nuevamente es el genoma 
+   -x archivo de salida en formato fasta
+1. **Primero** debe llamarse el archivo fasta que contiene el genoma.
+2. **-o** es el archivo de salida en formato gff (Anotado).
+3. **-g** nuevamente es el genoma.
+4. **-x** archivo de salida en formato fasta.
 ## 3. Secuencias de proteinas
   Se utiliza el mismo promgara gffread
   ### gffread  GCA_033216535.1_TgRH_pasteur.augustus.gtf -g ../GCA_033216535.1.fa -y proteins.fasta
