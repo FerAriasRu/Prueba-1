@@ -35,6 +35,34 @@
   ### diff diff fasta_ids.txt gtf_ids.txt<br> 
 
 ## 5. Información general del genoma
+   Se instalara el programa bioawk y seqkit
+   ### conda install -c bioconda bioawk
+   Como el archivo fasta que se esta utilizando contiene informacion de los 13 cromosomas y tambien de componente WGS/scaffold, se procedio a extraer primero un archivo solo con los cromosomas 
+  Para saber la longitud de cada uno de los cromosomas se usara: 
+  ### seqkit fx2tab -n -l cromosomas.fasta 
+  Luego para saber las bases ambiguas se implementara seqkit y awak para crear un archivo temporal que contenga esta información con el comando 
+### seqkit seq -w 0 cromosomas.fasta | 
+awk 'BEGIN{OFS="\t"} /^>/ {if(seq!="") print id, gsub(/[Nn]/,"",seq); id=$0; sub(/^>/,"",id); seq=""; next} {seq=seq $0} END{if(seq!="") print id, gsub(/[Nn]/,"",seq)}' 
+> ambiguas.txt
 
 
- 
+
+
+PARA LOS GENES 
+
+awk 'BEGIN{FS="\t"}
+!/^#/ {
+    match($9,/gene_id "([^"]+)"/,a)
+    if(a[1]!="")
+        genes[$1,a[1]]=1
+}
+END {
+    for(x in genes) {
+        split(x,a,SUBSEP)
+        count[a[1]]++
+    }
+    for(chr in count)
+        print chr, count[chr]
+}' GCA_033216535.1_TgRH_pasteur.augustus.gtf | grep '^CM' | sort > genes.txt
+
+ informacion general del ensamblaje, estadistica. 
