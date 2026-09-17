@@ -89,11 +89,8 @@ g1    exon    5000-6000
  awk 'BEGIN{OFS="\t"}{gene=""
     if (match($0,/gene_id "[^"]+"/)) {
         gene=substr($0,RSTART+9,RLENGTH-10)
-    }
-
-    if (gene!="") {
-        key=$1 SUBSEP gene
-
+    }if (gene!="") {
+        key=$1 SUBSEP gene 
         if (!(key in min)) {
             min[key]=$4
             max[key]=$5
