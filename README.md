@@ -144,6 +144,9 @@ FNR==1 {
         print $1,$2,$3,$5*100,$10,($10/$12)*100,genes[key],genes[key]/0.05
 }' gene_density_50kb.tsv nuc_50kb.txt > tabla_50kb.tsv
 
+## 7. Graficas de %GC y densidad de genes por  cada cromosoma. 
+se utilizo el scrip de R [Grafica_GC_desnidad_genica_unacolumna.R](Grafica_GC_desnidad_genica_unacolumna.R) El cual guarda las graficas en una carpeta tanto indivial como en conjunto, la salida final es una imagen en pdf que contiene todas las graficas [ALL_chromosomes_GC_gene_density.pdf]
+
 
 
 
