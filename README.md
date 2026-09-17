@@ -62,7 +62,8 @@
 4. Luego se usa bedtools para calcular lo que se necesita 
 ### bedtools nuc  -fi ../GCA_033216535.1.fa -bed windows_50kb.bed  > nuc_50kb.txt
 
-5. Se calcula el % de bases ambiguas usando 
+5. Se calcula el % de bases ambiguas usando
+   
 awk 'BEGIN{OFS="\t"}
 NR==1 {
     print "chrom","start","end","GC_percent","N_count","N_percent"
