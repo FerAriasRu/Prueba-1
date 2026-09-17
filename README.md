@@ -85,8 +85,7 @@ g1    exon    1322-2538
 g1    CDS     1340-2500
 g1    exon    5000-6000
 
- awk 'BEGIN{OFS="\t"}
-{
+ awk 'BEGIN{OFS="\t"}{
     gene=""
     if (match($0,/gene_id "[^"]+"/)) {
         gene=substr($0,RSTART+9,RLENGTH-10)
