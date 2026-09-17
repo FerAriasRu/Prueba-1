@@ -45,9 +45,118 @@
 
    Por lo cual se utilizo el strip [tabla.py](tabla.py), el cual necesita como entrada la anotacion del genoma y el genoma. Entrega un archivo que contiene la tabla con las 6 columnas y otro con la secunecia fasta de los cromosomas. 
 
-## 6. Distribución del contenido GC
+## 6. Distribución del contenido GC en ventanas de 50Kb, se debe contruir un archivo con las ventanas y su respectiva información en este caso la salida sera tabla_50kb.tsv
 
-1. 
+
+1. Cromosomas y longitd (Salen secuencias de scafolds)
+
+### infoseq -sequence ../GCA_033216535.1.fa -only -name -length -outfile chrom.sizes
+ Se corta con head y sale el archivo chrom.sizes2
+ 
+2. Se debe convertir a un formato bet 
+ ### awk '{print $1"\t"$2}' chrom.sizes2 > chrom.sizes3
+
+3. Se hace un archivo de ventanas (se debe quitar  la primera fila del archivo chrom.sizes3  que es el nombre y la longitud 
+### bedtools makewindows -g chrom.sizes3 -w 50000 > windows_50kb.bed^C
+
+4. Luego se usa bedtools para calcular lo que se necesita 
+### bedtools nuc  -fi ../GCA_033216535.1.fa -bed windows_50kb.bed  > nuc_50kb.txt
+
+5. Se calcula el % de bases ambiguas usando 
+awk 'BEGIN{OFS="\t"}
+NR==1 {
+    print "chrom","start","end","GC_percent","N_count","N_percent"
+    next
+}
+{
+    print $1,$2,$3,$5*100,$10,($10/$12)*100
+}' nuc_50kb.txt > composicion_50kb.tsv
+
+6. Para número de genes por ventana densidad génica (Se debe saber como el archivo de anotaciones identifica los genes, en este caso
+
+grep -v '^#' GCA_033216535.1_TgRH_pasteur.augustus.gtf | head -3
+
+transcript_id "g1.t1";
+gene_id "g1";
+
+6.1. Se crea un bed genes. Para cada gene_id, guarda el inicio mínimo y el final máximo.
+
+Por ejemplo, si el GTF tiene:
+
+g1    exon    1322-2538
+g1    CDS     1340-2500
+g1    exon    5000-6000
+
+ awk 'BEGIN{OFS="\t"}
+{
+    gene=""
+    if (match($0,/gene_id "[^"]+"/)) {
+        gene=substr($0,RSTART+9,RLENGTH-10)
+    }
+
+    if (gene!="") {
+        key=$1 SUBSEP gene
+
+        if (!(key in min)) {
+            min[key]=$4
+            max[key]=$5
+            chr[key]=$1
+        } else {
+            if ($4 < min[key]) min[key]=$4
+            if ($5 > max[key]) max[key]=$5
+        }
+    }
+}
+END {
+    for (key in min) {
+        split(key,a,SUBSEP)
+        print chr[key], min[key]-1, max[key], a[2]
+    }
+}' GCA_033216535.1_TgRH_pasteur.augustus.gtf > genes.bed
+
+6.2. Contar genes por ventana  (La cuarta columna es la cantidad de genes)
+
+bedtools intersect -a windows_50kb.bed  -b genes.bed -c > windows_genes.bed
+
+6.3. Calcular la densidad genica (La ultima columna es la genes/MB)
+awk 'BEGIN{OFS="\t"} {
+    print $1,$2,$3,$4,$4/0.05
+}' windows_genes.bed > gene_density_50kb.tsv
+
+
+7. Crear la tabla con toda la informacion chrom	Cromosoma
+- start	Inicio de ventana
+- end	Final de ventana
+- GC_percent	Porcentaje G+C
+- N_count	Número de bases ambiguas
+- N_percent	Porcentaje de bases ambiguas
+- genes	Número de genes
+- genes_per_Mb	Densidad génica
+
+awk 'BEGIN{OFS="\t"}
+NR==FNR {
+    if(FNR>1)
+        genes[$1 FS $2 FS $3]=$4
+    next
+}
+FNR==1 {
+    print "chrom","start","end","GC_percent","N_count","N_percent","genes","genes_per_Mb"
+    next
+}
+{
+    key=$1 FS $2 FS $3
+    if(key in genes)
+        print $1,$2,$3,$5*100,$10,($10/$12)*100,genes[key],genes[key]/0.05
+}' gene_density_50kb.tsv nuc_50kb.txt > tabla_50kb.tsv
+
+
+
+
+
+
+
+
+
 
 
 
