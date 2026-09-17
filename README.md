@@ -74,12 +74,10 @@ NR==1 {
 
 6. Para número de genes por ventana densidad génica (Se debe saber como el archivo de anotaciones identifica los genes, en este caso
 
-grep -v '^#' GCA_033216535.1_TgRH_pasteur.augustus.gtf | head -3
+### grep -v '^#' GCA_033216535.1_TgRH_pasteur.augustus.gtf | head -3
 
-transcript_id "g1.t1";
-gene_id "g1";
 
-6.1 Se crea un bed genes. Para cada gene_id, guarda el inicio mínimo y el final máximo.
+* 6.1 Se crea un bed genes. Para cada gene_id, guarda el inicio mínimo y el final máximo.
 
 Por ejemplo, si el GTF tiene:
 
