@@ -112,11 +112,12 @@ END {
     }
 }' GCA_033216535.1_TgRH_pasteur.augustus.gtf > genes.bed
 
-6.2. Contar genes por ventana  (La cuarta columna es la cantidad de genes)
+* 6.2. Contar genes por ventana  (La cuarta columna es la cantidad de genes)
 
-bedtools intersect -a windows_50kb.bed  -b genes.bed -c > windows_genes.bed
+### bedtools intersect -a windows_50kb.bed  -b genes.bed -c > windows_genes.bed
 
-6.3. Calcular la densidad genica (La ultima columna es la genes/MB)
+* 6.3. Calcular la densidad genica (La ultima columna es la genes/MB)
+
 awk 'BEGIN{OFS="\t"} {
     print $1,$2,$3,$4,$4/0.05
 }' windows_genes.bed > gene_density_50kb.tsv
