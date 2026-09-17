@@ -35,4 +35,19 @@
   ### diff diff fasta_ids.txt gtf_ids.txt<br> 
 
 ## 5. Información general del genoma
-  En este punto se desea una tabla que mencione el nombre del cromosoma
+  En este punto se desea una tabla que mencione:
+   Cromosoma;
+   longitud;
+   cantidad de bases ambiguas (N);
+   porcentaje de GC;
+   número de genes;
+   densidad génica, expresada como genes por megabase.
+
+   Por lo cual se utilizo el strip tabla.py, el cual necesita como entrada la anotacion del genoma y el genoma. Entrega un archivo que contiene la tabla con las 6 columnas y otro con la secunecia fasta de los cromosomas. 
+
+## 6. Distribución del contenido GC
+
+1. 
+
+
+
