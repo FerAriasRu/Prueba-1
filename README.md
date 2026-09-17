@@ -45,7 +45,7 @@
 
    Por lo cual se utilizo el strip [tabla.py](tabla.py), el cual necesita como entrada la anotacion del genoma y el genoma. Entrega un archivo que contiene la tabla con las 6 columnas y otro con la secunecia fasta de los cromosomas. 
 
-## 6. Distribución del contenido GC en ventanas de 50Kb, se debe contruir un archivo con las ventanas y su respectiva información en este caso la salida sera tabla_50kb.tsv
+## 6. Distribución del contenido GC en ventanas de 50Kb, se debe contruir un archivo con las ventanas y su respectiva información en este caso la salida sera [tabla_50kb.tsv](tabla_50kb.tsv)
 
 
 1. Cromosomas y longitd (Salen secuencias de scafolds)
