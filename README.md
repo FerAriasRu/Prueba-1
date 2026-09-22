@@ -147,9 +147,12 @@ FNR==1 {
 ## 7. Graficas de %GC y densidad de genes por  cada cromosoma. 
 se utilizo el scrip de R [Grafica_GC_desnidad_genica_unacolumna.R](Grafica_GC_desnidad_genica_unacolumna.R) El cual guarda las graficas en una carpeta tanto indivial como en conjunto, la salida final es una imagen en pdf que contiene todas las graficas [ALL_chromosomes_GC_gene_density.pdf](ALL_chromosomes_GC_gene_density.pdf)
 
-## 8. GRacias de %GC entre cromosomas 
+## 8. Grafias de %GC entre cromosomas 
 
 Para realizar la comparacion de %CG entre cromosomas con respecto al promedio global se utilizo el siguiente script [Grafica_comparacion_CG_cromosomas.R](Grafica_comparacion_CG_cromosomas.R)
+
+## 9.PCA segun frecuencia de aa
+
 
 
 
