@@ -155,10 +155,13 @@ Para realizar la comparacion de %CG entre cromosomas con respecto al promedio gl
 
 Con el fin de saber si habia una agrupación de las proteinas,se realizaron diferentes graficas de PCA. El nombre indica lo que muestra la figura resultado. 
 
-[Grafica_PCA_frecuenciaaa_longitudproteina.R]{Grafica_PCA_frecuenciaaa_longitudproteina.R} 
-[Grafica_PCA_frecuencia_cromosomas.R]{Grafica_PCA_frecuencia_cromosomas.R]}
-[Graficas_PCA_aa_groups_kmeans.R]{Graficas_PCA_aa_groups_kmeans.R}
-[Graficas_PCA_por_familia.R]{Graficas_PCA_por_familia.R}
+* [Grafica_PCA_frecuenciaaa_longitudproteina.R]{Grafica_PCA_frecuenciaaa_longitudproteina.R}
+  
+* [Grafica_PCA_frecuencia_cromosomas.R]{Grafica_PCA_frecuencia_cromosomas.R}
+  
+* [Graficas_PCA_aa_groups_kmeans.R]{Graficas_PCA_aa_groups_kmeans.R}
+  
+* [Graficas_PCA_por_familia.R]{Graficas_PCA_por_familia.R}
 
 
 
