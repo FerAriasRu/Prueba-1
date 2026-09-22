@@ -159,7 +159,7 @@ Con el fin de saber si habia una agrupación de las proteinas,se realizaron dife
   
 * [Grafica_PCA_frecuencia_cromosomas.R](Grafica_PCA_frecuencia_cromosomas.R)
   
-* [Graficas_PCA_aa_groups_kmeans.R](Graficas_PCA_aa_groups_kmeans.R)
+* [Graficas_PCA_aa_groups_kmeans.R](Graficas_PCA_aa_groups_kmeans.R) Este se realizo agrupando los aminoacidos segun caracteristicas fisicoquiimcas, como hidrofobicidad.
   
 * [Graficas_PCA_por_familia.R](Graficas_PCA_por_familia.R)
 
