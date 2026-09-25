@@ -180,7 +180,8 @@ awk -F'\t' '
         print id "\t" product
 }' > products.tsv
 
-
+## 10. PCA segun uso de codonos.
+Se implemento el script [pca_uso_codones_FINAL.R]{pca_uso_codones_FINAL.R}
 
 
 
