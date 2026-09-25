@@ -166,7 +166,19 @@ Con el fin de saber si habia una agrupación de las proteinas,se realizaron dife
   
 * [Graficas_PCA_por_familia.R](Graficas_PCA_por_familia.R)
 
+Para correr el script final del PCA. se debe generar con grp un archivo products.tsv que contenga la informacion de la anotacion tabulada. 
+grep -v '^#' GCA_033216535.1_TgRH_pasteur.chromosomes.gff3 |
+awk -F'\t' '
+{
+    match($9, /ID=[^;]+/)
+    id = substr($9, RSTART+3, RLENGTH-3)
 
+    match($9, /product=[^;]+/)
+    product = substr($9, RSTART+8, RLENGTH-8)
+
+    if (id != "" && product != "")
+        print id "\t" product
+}' > products.tsv
 
 
 
