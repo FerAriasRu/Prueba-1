@@ -162,11 +162,11 @@ Con el fin de saber si habia una agrupación de las proteinas,se realizaron dife
   
 * [Grafica_PCA_frecuencia_cromosomas.R](Grafica_PCA_frecuencia_cromosomas.R)
   
-* [Graficas_PCA_aa_groups_kmeans.R](Graficas_PCA_aa_groups_kmeans.R) Este se realizo agrupando los aminoacidos segun caracteristicas fisicoquiimcas, como hidrofobicidad.
-  
-* [Graficas_PCA_por_familia.R](Graficas_PCA_por_familia.R)
+* [Graficas_PCA_FAMILIAS_FINAL.R](Graficas_PCA_FAMILIAS_FINAL.R)
 
-Para correr el script final del PCA. se debe generar con grp un archivo products.tsv que contenga la informacion de la anotacion tabulada. 
+Para correr el script final del PCA. Se debe generar con grep un archivo products.tsv que contenga la informacion de la anotacion tabulada. 
+
+
 grep -v '^#' GCA_033216535.1_TgRH_pasteur.chromosomes.gff3 |
 awk -F'\t' '
 {
@@ -180,7 +180,7 @@ awk -F'\t' '
         print id "\t" product
 }' > products.tsv
 
-## 10. PCA segun uso de codonos.
+## 10. PCA según uso de codones.
 Se implemento el script [pca_uso_codones_FINAL.R](pca_uso_codones_FINAL.R)
 
 
