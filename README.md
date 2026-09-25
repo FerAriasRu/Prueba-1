@@ -181,7 +181,7 @@ awk -F'\t' '
 }' > products.tsv
 
 ## 10. PCA segun uso de codonos.
-Se implemento el script [pca_uso_codones_FINAL.R]{pca_uso_codones_FINAL.R}
+Se implemento el script [pca_uso_codones_FINAL.R](pca_uso_codones_FINAL.R)
 
 
 
