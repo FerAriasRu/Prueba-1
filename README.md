@@ -167,6 +167,30 @@ Con el fin de saber si habia una agrupación de las proteinas,se realizaron dife
 * [Grafica_PCA_frecuencia_cromosomas.R](Grafica_PCA_frecuencia_cromosomas.R)
   
 * [Graficas_PCA_FAMILIAS_FINAL.R](Graficas_PCA_FAMILIAS_FINAL.R)
+Debido a que los archivos  pueden tener informacion de scaffolds es necesario eliminarla para analizar unicamente los cromosomas.
+
+1. para el archivo de notacion
+
+   awk -F'\t' '
+BEGIN { OFS="\t" }
+
+$0 ~ /^#/ {
+    print
+    next
+}
+
+$1 ~ /^CM/ {
+    print
+}
+' GCA_033216535.1_TgRH_pasteur.gff3 \
+> GCA_033216535.1_TgRH_pasteur.chromosomes.gff3
+
+3. Para el archivo del genoma
+
+seqkit grep -r -p '^CM' \
+GCA_033216535.1_TgRH_pasteur_genomic.fna \
+> GCA_033216535.1_TgRH_pasteur.chromosomes.fna
+
 
 Para correr el script final del PCA. Se debe generar con grep un archivo products.tsv que contenga la informacion de la anotacion tabulada. 
 
