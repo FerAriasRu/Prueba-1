@@ -26,7 +26,7 @@
   -g  es el archivo del genoma<br>
   -y es el archivo de salida que contiene secuencias de proteinas en formato fasta.<br> 
   
-## 4. Para comprara los nombres de los cromosomas y contings del archivo del genoma y las anotaciones se pueden usar los siguientes comandos de bash on el fin de  guardar los nombres en archivos txt y luego compararlos 
+## 4. Para comparar los nombres de los cromosomas y contings del archivo del genoma y las anotaciones se pueden usar los siguientes comandos de bash on el fin de  guardar los nombres en archivos txt y luego compararlos 
   generar el archivo txt del genoma<br> 
   ### grep '^>' ../GCA_033216535.1.fa | cut -d' ' -f1 | sed 's/^>//' | sort > fasta_ids.txt<br>
   generar el archivo txt de la anotacion<br> 
