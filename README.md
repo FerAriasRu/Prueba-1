@@ -147,8 +147,10 @@ FNR==1 {
 
 ## Para realizar el analisis de ventanas de manera automatica y poder analizar diferentes valores de estas, se realizo el script [pipeline_ventanas.sh](pipeline_ventanas.sh) el cual se ejecuta ./pipeline_ventanas.sh  tamaño de ventana. 
 
+Se debe tener en cuenta  como el gff3, reconoce los genes, pues esta como id_genes, pero en otros casos puede ser ID, por lo cual se debe modificar el paso 10 del archivo segun corresponda. 
+
 ## 7. Graficas de %GC y densidad de genes por  cada cromosoma. 
-se utilizo el scrip de R [Grafica_GC_desnidad_genica_unacolumna.R](Grafica_GC_desnidad_genica_unacolumna.R) El cual guarda las graficas en una carpeta tanto indivial como en conjunto, la salida final es una imagen en pdf que contiene todas las graficas [ALL_chromosomes_GC_gene_density.pdf](ALL_chromosomes_GC_gene_density.pdf)
+se utilizo el scrip de R [Grafica_GC_densidad_genica_unacolumna.R](Grafica_GC_desnidad_genica_unacolumna.R) El cual guarda las graficas en una carpeta tanto indivial como en conjunto, la salida final es una imagen en pdf que contiene todas las graficas [ALL_chromosomes_GC_gene_density.pdf](ALL_chromosomes_GC_gene_density.pdf)
 
 ## 8. Grafias de %GC entre cromosomas 
 
