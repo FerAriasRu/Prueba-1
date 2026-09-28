@@ -156,6 +156,8 @@ se utilizo el scrip de R [Grafica_GC_densidad_genica_unacolumna.R](Grafica_GC_de
 
 Para realizar la comparacion de %CG entre cromosomas con respecto al promedio global se utilizo el siguiente script [Grafica_comparacion_CG_cromosomas.R](Grafica_comparacion_CG_cromosomas.R)
 
+Se debe tener en cuenta las variables en donde se guardan los archivos, se deben cambiar a la direccion de la carpeta que se desee. 
+
 ## 9.PCA segun frecuencia de aa
 
 Con el fin de saber si habia una agrupación de las proteinas,se realizaron diferentes graficas de PCA. El nombre indica lo que muestra la figura resultado. 
